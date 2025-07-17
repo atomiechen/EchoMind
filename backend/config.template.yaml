@@ -1,0 +1,23 @@
+host: 127.0.0.1
+port: 8000
+
+# Path to the frontend static files (relative to this config file)
+spa_path: ../frontend/dist
+
+# Path to the directory where meeting data (audio, transcripts, etc.) will be stored
+meeting_data_root: ../data/meetings/
+
+# Database connection URL (SQLite example, relative to this config file)
+db_url: sqlite:///../data/echomind.db
+
+# The LLM to use
+llm_model: gpt-4o
+# List of API endpoints with their corresponding API keys
+endpoints:
+  - api_key: CHANGEME
+
+# URL of the FunASR WebSocket server
+funasr_uri: ws://localhost:10095/CHANGEME
+
+# Whether to save PCM audio files. It consumes a lot of disk space.
+# save_pcm: true

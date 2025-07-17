@@ -1,0 +1,53 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "EchoMind - Backend"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "fastapi[standard]>=0.115.12",
+    "funasr-client>=0.1.5",
+    "handyllm>=0.9.3",
+    "markdown>=3.7",
+    "numpy>=1.24.4",
+    "pydantic-settings>=2.8.1",
+    "pydantic-socketio>=0.1.3",
+    "pyjwt>=2.9.0",
+    "pytz>=2025.2",
+    "sqlmodel>=0.0.24",
+    "tenacity>=9.0.0",
+]
+
+# ref: https://github.com/astral-sh/uv/issues/1626#issuecomment-2394365983
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# specify top-level package to avoid conflict with other folder names
+packages = ["app"]
+
+[dependency-groups]
+dev = [
+    "pydantic-to-typescript>=2.0.0",
+    "python-dmon>=0.2.3",
+    "ruff>=0.11.13",
+]
+
+[[tool.uv.index]]
+# Optional name for the index.
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+# default use Tsinghua source, not PyPI official source
+default = true
+
+[tool.dmon.tasks]
+app = { cmd = ["python3", "-u", "app/main.py"], log_rotate = true }
+
+[tool.dmon]
+default_task = "app"
+
+[tool.ruff.lint]
+# select = ["E", "F"]
+ignore = ["F841"]
