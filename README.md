@@ -32,9 +32,11 @@ volume = {9},
 number = {7},
 url = {https://doi.org/10.1145/3757587},
 doi = {10.1145/3757587},
+abstract = {Teams often engage in group discussions to leverage collective intelligence when solving complex problems. However, in real-time discussions, such as face-to-face meetings, participants frequently struggle with managing diverse perspectives and structuring content, which can lead to unproductive outcomes like forgetfulness and off-topic conversations. Through a formative study, we explores a human-AI collaborative facilitation approach, where AI assists in establishing a shared knowledge framework to provide a guiding foundation. We present EchoMind, a system that visualizes discussion knowledge through real-time issue mapping. EchoMind empowers participants to maintain focus on specific issues, review key ideas or thoughts, and collaboratively expand the discussion. The system leverages large language models (LLMs) to dynamically organize dialogues into nodes based on the current context recorded on the map. Our user study with four teams (N=16) reveals that EchoMind helps clarify discussion objectives, trace knowledge pathways, and enhance overall productivity. We also discuss the design implications for human-AI collaborative facilitation and the potential of shared knowledge visualization to transform group dynamics in future collaborations.},
 journal = {Proc. ACM Hum.-Comput. Interact.},
-month = nov,
+month = oct,
 articleno = {CSCW406},
 numpages = {38},
+keywords = {complex problems, group discussions, human-AI collaboration, issue mapping, large language models}
 }
 ```
