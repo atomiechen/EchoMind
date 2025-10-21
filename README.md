@@ -1,8 +1,10 @@
 # EchoMind
 
+[CSCW Paper](https://dl.acm.org/doi/10.1145/3757587) | [Medium](https://medium.com/acm-cscw/how-did-we-get-here-keeping-real-time-discussions-focused-with-echomind-3abab96573ed)
+
 Official code repository for our CSCW 2025 paper:
 
-**EchoMind: Supporting Real-time Complex Problem Discussions through Human-AI Collaborative Facilitation**  
+**EchoMind: Supporting Real-time Complex Problem Discussions through Human-AI Collaborative Facilitation**
 
 > 🚧 Code will be released soon. Stay tuned!
 
