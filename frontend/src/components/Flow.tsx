@@ -164,10 +164,12 @@ const nodeTypes = {
 
 export default function Flow({ initialNodeData, isEditable }: { initialNodeData: IssueData[], isEditable: boolean }) {
   const { t } = useTranslation();
+  const { fitView } = useReactFlow<CustomNodeType>();
 
   // 根据传入数据提供节点和边的初始值
   console.log("initialNodeData", initialNodeData);
   const initialized = initializeElements(initialNodeData, "-1", isEditable);
+  const hasFitView = useRef(false);
   const [nodes, setNodes, onNodesChange] = useNodesState<CustomNodeType>(initialized.nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>(initialized.edges);
   // 监听 initialNodeData 变化，更新 nodes 和 edges
@@ -175,6 +177,7 @@ export default function Flow({ initialNodeData, isEditable }: { initialNodeData:
     const initialized = initializeElements(newInitialNodeData, "-1", isEditable);
     setNodes(initialized.nodes);
     setEdges(initialized.edges);
+    hasFitView.current = false; // 重置标志，以便重新 fitView
   }, initialNodeData);
   const { getNodes, getEdges } = useReactFlow<CustomNodeType>();
   const nodesInitialized = useNodesInitialized();
@@ -228,8 +231,14 @@ export default function Flow({ initialNodeData, isEditable }: { initialNodeData:
       const layouted = applyDagreLayout(getNodes(), getEdges());
       setNodes([...layouted.nodes]);
       setEdges([...layouted.edges]);
+
+      // fit view for initial load
+      if (!hasFitView.current) {
+        fitView();
+        hasFitView.current = true;
+      }
     }
-  }, [nodesInitialized, getEdges, getNodes, setEdges, setNodes]);
+  }, [nodesInitialized, getEdges, getNodes, setEdges, setNodes, fitView]);
 
   useSocket('statusAI', useCallback((data) => {
     console.log("onStatusAI", data);
