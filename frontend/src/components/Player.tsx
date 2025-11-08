@@ -14,7 +14,11 @@ const formatTime = (seconds: number) => {
   return `${hours > 0 ? `${hours}:` : ''}${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 };
 
-export const Player = forwardRef((props, ref) => {
+export type PlayerHandle = {
+  setCurrentTime: (time: number) => void;
+};
+
+export const Player = forwardRef<PlayerHandle>((props, ref) => {
   const meetingId = useMeetingStore(s => s.meetingId);
   const { t } = useTranslation();
 

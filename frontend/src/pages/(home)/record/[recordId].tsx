@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Flex, Box, Code, Group, useMantineTheme } from '@mantine/core';
 import { useParams } from "react-router";
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
@@ -14,7 +14,7 @@ import type { SendAsrData } from "@/lib/models";
 import { SideResizable } from "@/components/SideResizable/SideResizable";
 import { useValueChange } from "@/hooks/useValueChange";
 import { useTranslation } from "react-i18next";
-import { Player } from "@/components/Player";
+import { Player, type PlayerHandle } from "@/components/Player";
 
 
 export async function Loader({ params }: { params: { meetingId: string } }) {
@@ -47,6 +47,13 @@ export default function MeetingRecord() {
         useShallow((s) => [s.setMeeting, s.meetingHashId, s.topic, s.isHost, s.type, s.setHeaderContent])
     );
     const meetingTypeGraph = (meetingType === 'graph');
+
+    const playerRef = useRef<PlayerHandle>(null);  // 引用 Player 组件实例
+    const setCurrentTime = (time: number) => {
+      if (playerRef.current) {
+        playerRef.current.setCurrentTime(time);
+      }
+    };
 
     useEffect(() => {
         setMeeting({
@@ -115,8 +122,8 @@ export default function MeetingRecord() {
                                     padding: 0
                                 }
                         }>
-                        <CardList trans={onlineTransData} />
-                        <Player />
+                        <CardList trans={onlineTransData} setCurrentTime={setCurrentTime} />
+                        <Player ref={playerRef} />
                     </Flex>
                 }
 

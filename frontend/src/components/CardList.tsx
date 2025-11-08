@@ -29,16 +29,13 @@ const CardList: React.FC<TransProps> = ({ trans, setCurrentTime, IsEditable = fa
     return () => clearTimeout(timer);
   }, [showTooltip]);
 
-  if (!trans || !Array.isArray(trans.sentences)) {
-    return <div>Loading...</div>;
-  }
-
   const handleDoubleClick = (card: AsrSentence, index: number) => {
     if (setCurrentTime) {
       const startTime = card.time_range[0] / 1000;
+      console.log('handleDoubleClick', startTime);
       setCurrentTime(startTime);
       setSelectedIndex(index);
-      console.log('handleDoubleClick', startTime);
+      setTimeout(() => setSelectedIndex(null), 2000);  // 2秒后取消高亮
     }
   };
 
