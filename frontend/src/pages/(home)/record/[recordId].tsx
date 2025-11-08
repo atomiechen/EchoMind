@@ -14,6 +14,7 @@ import type { SendAsrData } from "@/lib/models";
 import { SideResizable } from "@/components/SideResizable/SideResizable";
 import { useValueChange } from "@/hooks/useValueChange";
 import { useTranslation } from "react-i18next";
+import { Player } from "@/components/Player";
 
 
 export async function Loader({ params }: { params: { meetingId: string } }) {
@@ -115,6 +116,7 @@ export default function MeetingRecord() {
                                 }
                         }>
                         <CardList trans={onlineTransData} />
+                        <Player />
                     </Flex>
                 }
 
