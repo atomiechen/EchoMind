@@ -104,7 +104,7 @@ dev = [
 requires-dist = [
     { name = "aiofiles", specifier = ">=24.1.0" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.12" },
-    { name = "funasr-client", specifier = ">=0.1.5" },
+    { name = "funasr-client", specifier = ">=0.1.6" },
     { name = "handyllm", specifier = ">=0.9.3" },
     { name = "markdown", specifier = ">=3.7" },
     { name = "numpy", specifier = ">=1.24.4" },
@@ -372,7 +372,7 @@ standard = [
 
 [[package]]
 name = "funasr-client"
-version = "0.1.5"
+version = "0.1.6"
 source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
 dependencies = [
     { name = "typing-extensions", version = "4.13.2", source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }, marker = "python_full_version < '3.9'" },
@@ -380,9 +380,9 @@ dependencies = [
     { name = "websockets", version = "13.1", source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }, marker = "python_full_version < '3.9'" },
     { name = "websockets", version = "15.0.1", source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }, marker = "python_full_version >= '3.9'" },
 ]
-sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/95/6f/44b681138cebfc053f4642122e781ebfbe2950a6f5447c0fc2e343cac146/funasr_client-0.1.5.tar.gz", hash = "sha256:d7f52a5542fae5c6fe9ef4b035861c39e7c8714d3d4bcdb8daf67af9ecfe2c00", size = 45625, upload-time = "2025-11-04T08:23:05.19Z" }
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/b8/f0/4caac56600307c2adb22f06b6f3bd7597770d39978e10441ad8d38af9ec9/funasr_client-0.1.6.tar.gz", hash = "sha256:dff93289d89ba2db9d2aa8958fc8317e77f18a295459540f78522cb11fc0bb92", size = 45970, upload-time = "2025-11-08T14:46:52.845Z" }
 wheels = [
-    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/b7/e3/89f18851fcef641bcf3d6c62358f692a831521b9beea8098adeac3bfac1d/funasr_client-0.1.5-py3-none-any.whl", hash = "sha256:8ac0a2019acf11df2e44e229797ca44717b8bf04a1f45df3233ffece12309f8a", size = 20110, upload-time = "2025-11-04T08:23:03.838Z" },
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/27/d0/7d734def154340509454e99ec94358e7c14a4a4f351488759a95fd4571c7/funasr_client-0.1.6-py3-none-any.whl", hash = "sha256:087f1e23e40ba42a90d61927b21f1722abe50431302120d8b6690f829c2ed6ca", size = 20395, upload-time = "2025-11-08T14:46:51.634Z" },
 ]
 
 [[package]]

@@ -142,7 +142,6 @@ class MeetingRecorder:
                 cur_client = self.funasr_client_dict[speaker_id]
                 # reset variables
                 cur_client.start_time = start_offset
-                cur_client._received_final = False
                 await cur_client.connect()
 
     def write_pcm(self, data: bytes, user_id: str, receive_time: datetime):

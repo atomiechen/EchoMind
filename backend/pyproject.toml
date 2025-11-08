@@ -7,7 +7,7 @@ requires-python = ">=3.8"
 dependencies = [
     "aiofiles>=24.1.0",
     "fastapi[standard]>=0.115.12",
-    "funasr-client>=0.1.5",
+    "funasr-client>=0.1.6",
     "handyllm>=0.9.3",
     "markdown>=3.7",
     "numpy>=1.24.4",
