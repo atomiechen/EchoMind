@@ -3,6 +3,8 @@ import { Slider, Button, Select, Text } from '@mantine/core';
 import { IconPlayerPlay, IconPlayerPause, IconVolume, IconDownload } from '@tabler/icons-react';
 import { useMeetingStore } from '@/store/meetingStore';
 import { API_BASE_URL } from '@/lib/constants';
+import { error } from '@/lib/notifications';
+import { useTranslation } from 'react-i18next';
 
 
 const formatTime = (seconds: number) => {
@@ -14,6 +16,7 @@ const formatTime = (seconds: number) => {
 
 export const Player = forwardRef((props, ref) => {
   const meetingId = useMeetingStore(s => s.meetingId);
+  const { t } = useTranslation();
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -77,7 +80,9 @@ export const Player = forwardRef((props, ref) => {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current.play().catch((err) => {
+          error(t('audioNotFound'), t('audioNotFoundMessage'));
+        });
       }
       setIsPlaying(!isPlaying);
     }

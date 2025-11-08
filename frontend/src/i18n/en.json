@@ -79,5 +79,7 @@
     "searchError": "Failed to fetch discussions",
     "welcome": "Welcome to EchoMind!",
     "ongoingTitle": "Recent Ongoing Discussions",
-    "discussionDetail": "Discussion Detail"
+    "discussionDetail": "Discussion Detail",
+    "audioNotFound": "Audio not found",
+    "audioNotFoundMessage": "The audio for this discussion is not recorded. Restart your backend service with PCM saving enabled to record audio."
 }

@@ -79,5 +79,7 @@
     "searchError": "获取研讨失败",
     "welcome": "欢迎使用 EchoMind！",
     "ongoingTitle": "最近进行中的讨论",
-    "discussionDetail": "研讨详情"
+    "discussionDetail": "研讨详情",
+    "audioNotFound": "未找到音频",
+    "audioNotFoundMessage": "该研讨的音频未被记录。请以启用 PCM 保存的方式重启后端服务，以记录音频。"
 }
