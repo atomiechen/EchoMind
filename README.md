@@ -6,6 +6,12 @@ Official code repository for our CSCW 2025 paper:
 
 **EchoMind: Supporting Real-time Complex Problem Discussions through Human-AI Collaborative Facilitation**
 
+The system generates real-time issue maps for ongoing conversations to facilitate complex problem discussions.
+Code in this repository implements extra features beyond the paper:
+- User & discussion management: multiple remote users can join the same discussion session.
+- Post-discussion review with transcript, issue map, and recorded audio (if configured to do so).
+- Internationalization (i18n) support.
+
 
 ## Video
 
@@ -31,8 +37,10 @@ The project is a full-stack web application with a Python backend and a React fr
 
 ### Prerequisites
 
-- OpenAI API key(s), or other compatible LLM API keys.
-- FunASR service URI for real-time speech recognition. To deploy it, follow the [FunASR runtime guide](https://github.com/modelscope/FunASR/blob/main/runtime/readme.md), and check out the improved [startup scripts](https://gist.github.com/atomiechen/2deaf80dba21b4434ab21d6bf656fbca).
+- [OpenAI API key(s)](https://platform.openai.com/api-keys), or other compatible LLM API keys.
+- [FunASR](https://github.com/modelscope/FunASR) service URI for real-time speech recognition.
+  - FunASR is open source and free to deploy its runtime service on your own server. Follow the [FunASR runtime guide](https://github.com/modelscope/FunASR/blob/main/runtime/readme.md), and check out the improved [startup scripts](https://gist.github.com/atomiechen/2deaf80dba21b4434ab21d6bf656fbca).
+  - You can also use other ASR services by implementing a compatible asynchronous client in the backend.
 
 ### Backend Setup
 
