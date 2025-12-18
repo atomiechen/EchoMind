@@ -40,7 +40,7 @@ async def connect(sid: str, environ, auth):
     # 将同一个userid的sid都加入到同一个room中，方便debug查看
     await sio.enter_room(sid, f"user-{user.username}")
 
-    # TODO: 如果断开重连，要重新加入到room中
+    # 如果断开重连，要重新加入到room中
     meeting_id = get_attendee_manager().getMeetingIn(user)
     if meeting_id:
         meeting = get_meeting_manager().getMeetingById(str(meeting_id))

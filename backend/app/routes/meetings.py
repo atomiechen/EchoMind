@@ -320,7 +320,6 @@ async def manual_update(
 
 
 # 用户选择节点：注意需要判断选择的节点和当前的节点是否是一样的
-# TODO 对于dialog何时清空的定义
 @api_router.post("/api/chooseNode")
 async def choose_node(
     meeting: MeetingDepPost,
@@ -392,25 +391,8 @@ async def add_node(
     InvalidNodeResponse,
     WrongAgentResponse,
 ]:
-    # TODO 这里加了一个 suggestion_id，后端需要做对应修改
-    """
-    前端
-    {
-        "type": "ISSUE" / "POSITION",
-        "father_id": "父节点的full id",
-        "content": "",
-        "meeting_hash_id": "",
-        "suggestion_id": ""
-    }
-    后端
-    {
-        "code": 0,
-        "full_id": "这个节点的full id"
-    }
-    """
     logger.info("user add node")
     # get data
-    # TODO 把suggestion_id传给agent
 
     # judge meeting agent type
     if isinstance(meeting_agent, MeetingAgentGamma):

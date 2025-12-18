@@ -279,7 +279,7 @@ class MeetingAgentGamma(MeetingAgent):
                 self.agent.is_running = False
                 await sio.statusAI(room, False)
 
-                # DONE： 用 processed_index 记录截止到调用上一次 agent 的对话 id (注意：这是总id，不是当前对话的id)
+                # DONE 用 processed_index 记录截止到调用上一次 agent 的对话 id (注意：这是总id，不是当前对话的id)
 
             else:
                 await asyncio.sleep(1)
@@ -303,7 +303,6 @@ class MeetingAgentGamma(MeetingAgent):
         检查agent的原始输入节点有没有被修改（内容，type）
         返回：true-有修改，false-无修改
         """
-        # TODO 如果换了节点，还是把原来的内容放进去
         # DONE 换了节点也不能长
         if (
             self.parsed_issues_new.parsed_issue[int(self.chosen_node) - 1].content
@@ -316,7 +315,7 @@ class MeetingAgentGamma(MeetingAgent):
             current_positions, input_positions = (
                 self.parsed_issues_new.i2p_current_positions(self.chosen_node)
             )
-            # TODO 编辑距离小于3，就判定为没有修改
+            # 【不采纳】编辑距离小于3，就判定为没有修改——然而不一定成立，加“不”会显著修改语义
             if (
                 old_dict["current_positions"] != current_positions
                 or old_dict["input_positions"] != input_positions
@@ -486,7 +485,6 @@ class MeetingAgentGamma(MeetingAgent):
             ):
                 return 0, res
             # 解析 agent 的输出
-            # TODO 修改prompt中的输入, 改成这里的解析的方法: position内容和编号都不能改
             parsed_new_issues = gamma_parse_new_issue(new_issues)
             self.logger.info(f"[parsed_new_issues] {parsed_new_issues=}")
             # 用 agent 的输出更新 issue map
@@ -548,7 +546,7 @@ class MeetingAgentGamma(MeetingAgent):
             print("现在没有选择的节点")
         elif int(full_id) != self.chosen_node:
             self.chosen_node = int(full_id)
-            # TODO: 检查，用户选择节点后，哪些变量要重置
+            # 用户选择节点后，部分变量要重置
             # self.new_dialogs = []
             self.start_issue_index = len(self.sentences)
             self.start_position_index = len(self.sentences)
