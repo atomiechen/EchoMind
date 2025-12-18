@@ -48,7 +48,7 @@ Change to the `backend` directory (`cd backend`):
 
 1. Install backend dependencies.
 
-   (a) We use [uv](https://docs.astral.sh/uv/) to manage the Python virtual environment and dependencies. 
+   (Option 1) We use [uv](https://docs.astral.sh/uv/) to manage the Python virtual environment and dependencies. 
 
    - Create a virtual environment `.venv` and install the dependencies:
 
@@ -58,7 +58,7 @@ Change to the `backend` directory (`cd backend`):
 
    - Then activate the virtual environment using `source .venv/bin/activate` (macOS/Linux) or `.venv\Scripts\activate` (Windows).
 
-   (b) You can also use `pip` if you prefer (activate your virtual environment first).
+   (Option 2) You can also use `pip` if you prefer (activate your virtual environment first).
 
    ```sh
    pip install -e .[dev]
