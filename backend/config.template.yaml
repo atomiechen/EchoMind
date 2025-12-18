@@ -10,8 +10,6 @@ meeting_data_root: ../data/meetings/
 # Database connection URL (SQLite example, relative to this config file)
 db_url: sqlite:///../data/echomind.db
 
-# The LLM to use
-llm_model: gpt-4o
 # List of API endpoints with their corresponding API keys
 endpoints:
   - api_key: CHANGEME

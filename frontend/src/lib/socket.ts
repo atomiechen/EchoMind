@@ -1,17 +1,14 @@
 import { io, Socket } from 'socket.io-client';
 import { API_BASE_URL } from '@/lib/constants';
-import type { AllSummaries, AudioChunkMeta, Identification, ProcessStatus, RequestData, SendAsrData, ToggleMicrophone, UpdateIssueData } from '@/lib/models';
+import type { AllSummaries, AudioChunkMeta, Identification, ProcessStatus, SendAsrData, ToggleMicrophone, UpdateIssueData } from '@/lib/models';
 import { useEffect } from 'react';
 import type { ReservedOrUserEventNames, ReservedOrUserListener } from '@socket.io/component-emitter';
 
 
 // ref: https://socket.io/docs/v4/typescript/
 interface ListenEvents {
-  noArg: () => void;
-  withAck: (d: string, callback: (e: number) => void) => void;
   identification: (d: Identification) => void;
   meetingEnd: () => void;
-  requestData: (d: RequestData) => void;
   sendCurrent: (d: SendAsrData) => void;
   updateIssue: (d: UpdateIssueData) => void;
   statusAI: (d: ProcessStatus) => void;

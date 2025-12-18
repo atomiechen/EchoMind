@@ -18,12 +18,10 @@ from app.types import MeetingLanguageType
 class MeetingRecorder:
     def __init__(
         self,
-        meeting_id: str,
         meeting_language: MeetingLanguageType,
         create_time: datetime,
         meeting_root_path: Path,
     ):
-        self.meeting_id = meeting_id
         self.meeting_language: MeetingLanguageType = meeting_language
         self.create_time = create_time
         self.trigger_event = asyncio.Event()

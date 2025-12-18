@@ -442,25 +442,6 @@ async def delete_node(
         return WrongAgentResponse()
 
 
-# 保存前端发来的信息
-@api_router.post("/api/sendUserSummary")
-async def send_user_summary(
-    meeting_agent: MeetingAgentDep,
-    edit_history: List,
-) -> Union[SuccessResponse, WrongAgentResponse]:
-    """
-    {
-        "meeting_hash_id": "hash id",
-        "edit_history": "list"
-    }
-    """
-    if isinstance(meeting_agent, MeetingAgentSummary):
-        await meeting_agent.save_history(edit_history)
-        return SuccessResponse()
-    else:
-        return WrongAgentResponse()
-
-
 # 获取所有的会议
 @api_router.get("/api/getAllMeetings")
 async def get_all_meetings(

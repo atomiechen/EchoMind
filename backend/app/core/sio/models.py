@@ -1,19 +1,10 @@
-from typing import List, Optional
+from typing import List
 
 from pydantic import BaseModel
 
 from app.core.agent.models import Issue
 from app.core.asr.models import SendAsrData as SendAsrData
 from app.types import RoleType
-
-
-class AudioChunk(BaseModel):
-    meeting_id: str
-    file_id: Optional[int]
-    begin: int
-    end: int
-    base64: str
-    encodingType: str
 
 
 class AudioChunkMeta(BaseModel):
@@ -31,10 +22,6 @@ class ToggleMicrophone(BaseModel):
 
 class Identification(BaseModel):
     role: RoleType
-
-
-class RequestData(BaseModel):
-    cnt: int
 
 
 class ProcessStatus(BaseModel):

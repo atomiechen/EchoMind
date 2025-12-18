@@ -23,15 +23,3 @@ class TotalData(SendAsrData):
     role: RoleType
     ai_type: AiType
     issue_map: List[Issue]
-
-
-class AudioData(BaseModel):
-    spk_id: str
-    cnt: int
-    meeting_id: str
-    real_begin_ms: int
-    real_end_ms: int
-    duration_ms: int
-    webm_base64: str
-    pcm_path: str
-    audio_data_path: str

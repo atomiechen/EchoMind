@@ -249,24 +249,6 @@ export type BodyMeetingsRequestTotal = {
 };
 
 /**
- * Body_meetings-send_user_summary
- */
-export type BodyMeetingsSendUserSummary = {
-    /**
-     * Edit History
-     */
-    edit_history: Array<unknown>;
-    /**
-     * Meeting Id
-     */
-    meeting_id?: string | null;
-    /**
-     * Meeting Hash Id
-     */
-    meeting_hash_id?: string | null;
-};
-
-/**
  * Body_meetings-update_hot_words
  */
 export type BodyMeetingsUpdateHotWords = {
@@ -1159,32 +1141,6 @@ export type MeetingsDeleteNodeResponses = {
 };
 
 export type MeetingsDeleteNodeResponse = MeetingsDeleteNodeResponses[keyof MeetingsDeleteNodeResponses];
-
-export type MeetingsSendUserSummaryData = {
-    body: BodyMeetingsSendUserSummary;
-    path?: never;
-    query?: never;
-    url: '/api/sendUserSummary';
-};
-
-export type MeetingsSendUserSummaryErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type MeetingsSendUserSummaryError = MeetingsSendUserSummaryErrors[keyof MeetingsSendUserSummaryErrors];
-
-export type MeetingsSendUserSummaryResponses = {
-    /**
-     * Response Meetings-Send User Summary
-     * Successful Response
-     */
-    200: SuccessResponse | WrongAgentResponse;
-};
-
-export type MeetingsSendUserSummaryResponse = MeetingsSendUserSummaryResponses[keyof MeetingsSendUserSummaryResponses];
 
 export type MeetingsGetAllMeetingsData = {
     body?: never;

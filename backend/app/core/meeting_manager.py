@@ -56,9 +56,7 @@ class MeetingManager:
         meeting_root_path: Path,
     ):
         meeting_id = str(meeting_id)
-        obj = MeetingRecorder(
-            meeting_id, meeting_language, create_time, meeting_root_path
-        )
+        obj = MeetingRecorder(meeting_language, create_time, meeting_root_path)
         self.meeting_recorders[meeting_id] = obj
         return obj
 

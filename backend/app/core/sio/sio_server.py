@@ -4,7 +4,6 @@ from app.core.sio.models import (
     AllSummaries,
     Identification,
     ProcessStatus,
-    RequestData,
     UpdateIssueData,
     SendAsrData,
 )
@@ -19,9 +18,6 @@ class SioServer(FastAPISocketIO):
 
     async def sendMeetingEnd(self, sid: str):
         await self.emit("meetingEnd", to=sid)
-
-    async def requestData(self, sid: str, cnt: int):
-        await self.emit("requestData", RequestData(cnt=cnt), to=sid)
 
     async def sendCurrent(self, sid: str, data: SendAsrData):
         await self.emit("sendCurrent", data, to=sid)

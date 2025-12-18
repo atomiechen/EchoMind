@@ -8,17 +8,6 @@ class Sentence(BaseModel):
     content: str
 
 
-class SpeakerBlock(BaseModel):
-    spk: str
-    block: List[Sentence]
-
-
-class SummaryBlock(BaseModel):
-    title: str
-    block_summary: str
-    object_relation: str
-
-
 class NodeElement(BaseModel):
     full_id: str
     content: str

@@ -65,9 +65,6 @@ class Settings(YamlBaseSettings):
     endpoints: List[Endpoint] = Field(..., min_length=1)
     """List of API endpoints configurations."""
 
-    llm_model: str
-    """The LLM model to use."""
-
     db_url: str
     """Database connection URL."""
 

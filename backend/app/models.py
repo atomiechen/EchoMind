@@ -115,13 +115,6 @@ class InvalidNodeResponse(BaseResponse):
     code: Literal[Code.INVALID_NODE] = Code.INVALID_NODE
 
 
-class EvaluationItem(AnnotatedModel):
-    name: str
-    active: int
-    contribution: int
-    comment: str
-
-
 class MeetingListRequest(AnnotatedModel):
     hash_id: Optional[str] = None
     title: Optional[str] = None

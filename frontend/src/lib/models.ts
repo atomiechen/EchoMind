@@ -12,14 +12,6 @@ export interface SummaryData {
   id: number;
   summary: string;
 }
-export interface AudioChunk {
-  meeting_id: string;
-  file_id: number | null;
-  begin: number;
-  end: number;
-  base64: string;
-  encodingType: string;
-}
 export interface AudioChunkMeta {
   meeting_id: string;
   encodingType: string;
@@ -66,9 +58,6 @@ export interface Relation {
 }
 export interface ProcessStatus {
   running: boolean;
-}
-export interface RequestData {
-  cnt: number;
 }
 export interface SendAsrData {
   speaker: {
