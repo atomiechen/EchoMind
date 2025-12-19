@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Card, Flex, Text, ScrollArea, Box } from '@mantine/core';
 import { IconUserFilled } from '@tabler/icons-react';
 import type { AsrSentence, SendAsrData } from '@/lib/models';
+import { useTranslation } from 'react-i18next';
 
 interface TransProps {
   trans: SendAsrData;
@@ -14,6 +15,8 @@ const CardList: React.FC<TransProps> = ({ trans, setCurrentTime, IsEditable = fa
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (scrollContainerRef.current) {
@@ -85,7 +88,7 @@ const CardList: React.FC<TransProps> = ({ trans, setCurrentTime, IsEditable = fa
                 <Flex align="center" mb={4} justify="space-between" style={{ width: '100%' }}>
                   <Flex align="center">
                     <IconUserFilled size={16} style={{ marginRight: 4 }} color="#228be6" />
-                    <Text size="sm">{trans.speaker[card.speaker_id] || '参会者'}</Text>
+                    <Text size="sm">{trans.speaker[card.speaker_id] || t('participant')}</Text>
                   </Flex>
                   <Text size="xs" color="gray" style={{ marginTop: 4 }} ml="auto">
                     {formatTime(card.time_range[0])} ➔ {formatTime(card.time_range[1])}
