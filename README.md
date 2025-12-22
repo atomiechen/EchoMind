@@ -12,6 +12,7 @@ Code in this repository implements extra features beyond the paper:
 - Post-discussion review with transcript, issue map, and recorded audio (if configured to do so).
 - Internationalization (i18n) support.
 
+You can also ask questions of this repo using [DeepWiki](https://deepwiki.com/atomiechen/EchoMind) (simply change `github.com` to `deepwiki.com` in the URL).
 
 ## Video
 
